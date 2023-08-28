@@ -28,5 +28,11 @@ orgs.newOrg('eclipse-ibeji') {
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('ibeji-example-applications') {
+      allow_update_branch: false,
+      description: "ibeji project example applications and integrations with other components",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
+    }
   ],
 }
