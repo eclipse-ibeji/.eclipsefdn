@@ -18,18 +18,24 @@ orgs.newOrg('eclipse-ibeji') {
   },
   _repositories+:: [
     orgs.newRepo('freyja') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('ibeji') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "ibeji project",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('ibeji-example-applications') {
+      allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
       description: "ibeji project example applications and integrations with other components",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
