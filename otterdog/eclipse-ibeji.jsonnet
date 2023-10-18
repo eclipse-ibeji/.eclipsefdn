@@ -1,5 +1,10 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local ibejiBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName) {
+  dismisses_stale_reviews: true,
+  required_approving_review_count: 1,
+};
+
 orgs.newOrg('eclipse-ibeji') {
   settings+: {
     default_repository_permission: "none",
@@ -21,24 +26,31 @@ orgs.newOrg('eclipse-ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      secret_scanning_push_protection: "disabled",
+      description: "freyja project",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        ibejiBranchProtectionRule('main'),
+      ],
     },
     orgs.newRepo('ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "ibeji project",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        ibejiBranchProtectionRule('main'),
+      ],
     },
     orgs.newRepo('ibeji-example-applications') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "ibeji project example applications and integrations with other components",
-      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        ibejiBranchProtectionRule('main'),
+      ],
     },
   ],
 }
