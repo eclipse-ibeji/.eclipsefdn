@@ -1,5 +1,10 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local ibejiBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName) {
+  dismisses_stale_reviews: true,
+  required_approving_review_count: 1,
+};
+
 orgs.newOrg('eclipse-ibeji') {
   settings+: {
     default_repository_permission: "none",
@@ -25,10 +30,7 @@ orgs.newOrg('eclipse-ibeji') {
       secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-        },
+        ibejiBranchProtectionRule('main'),
       ],
     },
     orgs.newRepo('ibeji') {
@@ -39,10 +41,7 @@ orgs.newOrg('eclipse-ibeji') {
       secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-        },
+        ibejiBranchProtectionRule('main'),
       ],
     },
     orgs.newRepo('ibeji-example-applications') {
@@ -53,10 +52,7 @@ orgs.newOrg('eclipse-ibeji') {
       secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          dismisses_stale_reviews: true,
-          required_approving_review_count: 1,
-        },
+        ibejiBranchProtectionRule('main'),
       ],
     },
   ],
