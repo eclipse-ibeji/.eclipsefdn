@@ -27,7 +27,6 @@ orgs.newOrg('eclipse-ibeji') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "freyja project",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
@@ -38,7 +37,6 @@ orgs.newOrg('eclipse-ibeji') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "ibeji project",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
@@ -49,7 +47,6 @@ orgs.newOrg('eclipse-ibeji') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       description: "ibeji project example applications and integrations with other components",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
