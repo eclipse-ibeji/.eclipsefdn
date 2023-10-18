@@ -21,8 +21,15 @@ orgs.newOrg('eclipse-ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      description: "freyja project",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+        },
+      ],
     },
     orgs.newRepo('ibeji') {
       allow_merge_commit: true,
@@ -31,6 +38,12 @@ orgs.newOrg('eclipse-ibeji') {
       description: "ibeji project",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+        },
+      ],
     },
     orgs.newRepo('ibeji-example-applications') {
       allow_merge_commit: true,
@@ -39,6 +52,12 @@ orgs.newOrg('eclipse-ibeji') {
       description: "ibeji project example applications and integrations with other components",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          dismisses_stale_reviews: true,
+          required_approving_review_count: 1,
+        },
+      ],
     },
   ],
 }
