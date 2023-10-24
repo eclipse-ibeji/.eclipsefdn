@@ -7,7 +7,6 @@ local ibejiBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branc
 
 orgs.newOrg('eclipse-ibeji') {
   settings+: {
-    default_repository_permission: "none",
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
     members_can_change_project_visibility: false,
@@ -28,6 +27,9 @@ orgs.newOrg('eclipse-ibeji') {
       delete_branch_on_merge: false,
       description: "freyja project",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
       ],
@@ -38,6 +40,9 @@ orgs.newOrg('eclipse-ibeji') {
       delete_branch_on_merge: false,
       description: "ibeji project",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
       ],
@@ -48,6 +53,9 @@ orgs.newOrg('eclipse-ibeji') {
       delete_branch_on_merge: false,
       description: "ibeji project example applications and integrations with other components",
       web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         ibejiBranchProtectionRule('main'),
       ],
