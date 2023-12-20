@@ -9,7 +9,6 @@ orgs.newOrg('eclipse-ibeji') {
   settings+: {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "",
-    members_can_change_project_visibility: false,
     name: " Eclipse Ibeji",
     packages_containers_internal: false,
     packages_containers_public: false,
