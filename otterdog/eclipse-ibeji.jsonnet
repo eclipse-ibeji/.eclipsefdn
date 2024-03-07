@@ -21,6 +21,7 @@ orgs.newOrg('eclipse-ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "freyja project",
       web_commit_signoff_required: false,
       workflows+: {
