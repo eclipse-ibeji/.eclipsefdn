@@ -34,6 +34,7 @@ orgs.newOrg('eclipse-ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "ibeji project",
       web_commit_signoff_required: false,
       workflows+: {
@@ -47,6 +48,7 @@ orgs.newOrg('eclipse-ibeji') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "ibeji project example applications and integrations with other components",
       web_commit_signoff_required: false,
       workflows+: {
