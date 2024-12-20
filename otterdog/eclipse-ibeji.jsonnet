@@ -5,7 +5,7 @@ local ibejiBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branc
   required_approving_review_count: 1,
 };
 
-orgs.newOrg('eclipse-ibeji') {
+orgs.newOrg('automotive.ibeji', 'eclipse-ibeji') {
   settings+: {
     description: "",
     name: " Eclipse Ibeji",
